@@ -56,4 +56,4 @@ while True:
         )
 
         # Print the AI's final, natural language response
-        # print(response.candidates[0].content.parts[0].text)
+        print(response.candidates[0].content.parts[0].text)
