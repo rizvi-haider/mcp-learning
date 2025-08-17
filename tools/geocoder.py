@@ -12,12 +12,12 @@ def get_city_coordinates(city_name):
         return {"error": "Could not find coordinates for the city."}
 
 # The description for the AI
-geocoder_tool_description = {
+get_city_tool_description = {
     "name": "get_city_coordinates",
     "description": "Get the latitude and longitude for a given city name.",
     "parameters": {
-        "type": "object",
-        "properties": {"city_name": {"type": "string", "description": "The name of the city."}},
+        "type": "OBJECT",
+        "properties": {"city_name": {"type": "STRING", "description": "The name of the city."}},
         "required": ["city_name"]
     }
 }

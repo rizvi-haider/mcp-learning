@@ -1,17 +1,17 @@
 import os
 import google.generativeai as genai
-from tools.geoweather import get_weather
-from tools.geocoder import get_city_coordinates
+from tools.geocoder import get_city_coordinates, get_city_tool_description
+from tools.geoweather import get_weather, get_weather_tool_description
 from dotenv import load_dotenv
 
 load_dotenv()
 api_key = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=api_key)
 
-tools = [get_city_coordinates, get_weather]
+tools = [get_city_tool_description, get_weather_tool_description]
 
 # Initialize the model with the tools
-model = genai.GenerativeModel('gemini-1.5-pro-latest', tools=tools)
+model = genai.GenerativeModel('gemini-2.5-flash-lite', tools=tools)
 chat = model.start_chat()
 
 print("Weather Assistant is ready! Ask me for the weather. Type 'quit' to exit.")

@@ -16,14 +16,14 @@ def get_weather(latitude, longitude):
         return {"error": "Failed to retrieve weather data."}
 
 # The description for the AI
-weather_tool_description = {
+get_weather_tool_description = {
     "name": "get_weather",
     "description": "Get the current weather for a given latitude and longitude.",
     "parameters": {
-        "type": "object",
+        "type": "OBJECT",
         "properties": {
-            "latitude": {"type": "number", "description": "The latitude of the location."},
-            "longitude": {"type": "number", "description": "The longitude of the location."}
+            "latitude": {"type": "NUMBER", "description": "The latitude of the location."},
+            "longitude": {"type": "NUMBER", "description": "The longitude of the location."}
         },
         "required": ["latitude", "longitude"]
     }
